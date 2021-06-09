@@ -1,1 +1,37 @@
-Hello World
+<html>
+    <body>
+        <input id="listenToMe" type="text">
+        <script>
+            const listenToMe = document.getElementById('listenToMe');
+            const listeners = [
+                // Mouse events
+                'click',
+                'contextmenu',
+                'dblclick',
+                'mousedown',
+                'mouseenter',
+                'mouseleave',
+                'mousemove',
+                'mouseout',
+                'mouseover',
+                'mouseup',
+
+                // Keyboard events
+                'keydown',
+                'keypress',
+                'keyup',
+
+                // Input events
+                'input'
+            ];
+
+            listeners.forEach(type => 
+                listenToMe.addEventListener(type, e => 
+                    {
+                        console.log(e.type);
+                    }
+                )
+            );
+        </script>
+    </body>
+</html>
