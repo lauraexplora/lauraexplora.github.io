@@ -1,9 +1,10 @@
 <html>
     <body>
-        <input id="listenToMe" type="text">
-        <textarea rows="4" cols="50"></textarea>
+        <input id="mouthyInput" type="text">
+        <textarea id="boxyOne" rows="4" cols="50"></textarea>
         <script>
-            const listenToMe = document.getElementById('listenToMe');
+            const mouthyInput = document.getElementById('mouthyInput');
+            const boxyOne = document.getElementById('boxyOne');
             const listeners = [
                 // Mouse events
                 // 'click',
@@ -31,12 +32,13 @@
             ];
 
             listeners.forEach(type => 
-                listenToMe.addEventListener(type, e => 
+                mouthyInput.addEventListener(type, e => 
                     {
                         console.log(e.type);
                     }
                 )
             );
+            boxyOne.onchange = () => { debugger; }
         </script>
     </body>
 </html>
