@@ -38,7 +38,13 @@
                     }
                 )
             );
-            boxyOne.oninput = () => { debugger; }
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const debug = urlParams.get('debug')
+            if (debug) {
+                boxyOne.oninput = () => { debugger; }
+            }
+
         </script>
     </body>
 </html>
