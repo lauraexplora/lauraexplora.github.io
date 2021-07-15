@@ -38,6 +38,16 @@
                     }
                 )
             );
+
+            mouthyInput.onkeypress = () => {
+                input.value += '+';
+                console.log(input.value);
+                setTimeout(() => {
+                    input.value += '-';
+                    console.log(input.value);
+                }, 500)
+            };
+
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             const debug = urlParams.get('debug')
