@@ -2,9 +2,12 @@
     <body>
         <input id="mouthyInput" type="text">
         <textarea id="boxyOne" rows="4" cols="50"></textarea>
+        <button id="eventGuy" />
         <script>
             const mouthyInput = document.getElementById('mouthyInput');
             const boxyOne = document.getElementById('boxyOne');
+            const eventGuy = document.getElementById('eventGuy');
+
             const listeners = [
                 // Mouse events
                 // 'click',
@@ -47,6 +50,17 @@
                     console.log(mouthyInput.value);
                 }, 500)
             };
+
+            const blurry = () => {
+                console.log('Where are my glasses?');
+            }
+
+            let isItBlurry = false;
+
+            eventGuy.onclick = () => {
+                const fn = isItBlurry ? mouthyInput.addEventListener : mouthyInput.removeEventListener;
+                fn('blur',  blurry);
+            }
 
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
