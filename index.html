@@ -1,6 +1,6 @@
 <html>
     <body>
-        <h1>Version watermelon</h1>
+        <h1>Version peach</h1>
         <input id="mouthyInput" type="text">
         <textarea id="boxyOne" rows="4" cols="50"></textarea>
         <button id="eventGuy">Click me!</button>
@@ -32,7 +32,7 @@
 
                 // Change events
                 'change',
-                'blur',
+                // 'blur',
             ];
 
             listeners.forEach(type => 
@@ -56,11 +56,16 @@
                 console.log('Where are my glasses?');
             }
 
-            let isItBlurry = false;
+            let itIsBlurry = false;
 
             eventGuy.onclick = () => {
-                const fn = isItBlurry ? mouthyInput.addEventListener : mouthyInput.removeEventListener;
-                fn('blur',  blurry);
+                if (itIsBlurry) {
+                    mouthyInput.addEventListener('blur', blurry);
+                }
+                else {
+                    mouthyInput.removeEventListener('blur', blurry);
+                }
+                itIsBlurry = !itIsBlurry;
             }
 
             const queryString = window.location.search;
